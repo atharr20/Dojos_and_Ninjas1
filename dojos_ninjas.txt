@@ -1,0 +1,41 @@
+INSERT INTO dojos (name, created_at,updated_at)
+VALUES ('red dojo', NOW(),NOW()), ('blue dojo', NOW(),NOW()),('black dojo', NOW(),NOW());
+
+SELECT * FROM dojos;
+
+DELETE FROM dojos WHERE id IN (6,7);
+SELECT * FROM dojos;
+
+INSERT INTO dojos (name, created_at,updated_at)
+VALUES ('pink dojo', NOW(),NOW()), ('white dojo', NOW(),NOW()),('grey dojo', NOW(),NOW());
+
+INSERT INTO ninjas (dojo_id, first_name, last_name, age, created_at,updated_at)
+VALUES (8,'mike', 'ross',26, NOW(),NOW()), (8, 'john','jacob', 29, NOW(),NOW()),(8,'steve','ray',32, NOW(),NOW());
+
+SELECT * FROM ninjas;
+
+INSERT INTO ninjas (dojo_id, first_name, last_name, age, created_at,updated_at)
+VALUES (9,'pete', 'moss',26, NOW(),NOW()), (9, 'jabba','hut', 90, NOW(),NOW()),(9,'steven','cat',32, NOW(),NOW());
+
+SELECT * FROM ninjas;
+
+INSERT INTO ninjas (dojo_id, first_name, last_name, age, created_at,updated_at)
+VALUES (10,'raven', 'stone',26, NOW(),NOW()), (10, 'tom','tomtom', 90, NOW(),NOW()),(10,'kate','karate',32, NOW(),NOW());
+
+SELECT * FROM ninjas;
+
+SELECT * FROM ninjas
+WHERE dojo_id=8;
+
+SELECT * FROM ninjas
+WHERE dojo_id=10;
+
+SELECT * FROM ninjas
+WHERE id=11;
+
+SELECT * FROM ninjas
+JOIN dojos on ninjas.dojo_id=dojos.id
+WHERE ninjas.id=10;
+
+SELECT * FROM ninjas
+JOIN dojos on ninjas.dojo_id=dojos.id;
